@@ -1,0 +1,346 @@
+.App {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+}
+.container {
+  width: 100%;
+  display: flex;
+  max-width: 1500px;
+  align-items: center;
+}
+.top-bar {
+  background: linear-gradient(277.19deg, #1e1a1a 41.33%, #545151 125.97%);
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-inline: 20px;
+}
+.top-bar .container {
+  justify-content: space-between;
+}
+.img-wrapper {
+  background-color: #222222;
+  width: 150px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px 0px;
+}
+.top-bar img {
+  width: 60px;
+  object-fit: contain;
+}
+.galaxy-cont {
+  background: linear-gradient(
+    90deg,
+    #000000 15.7%,
+    rgba(238, 226, 226, 0) 90.15%
+  );
+  width: 100%;
+  height: 130px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.galaxy-cont .galaxy {
+  text-transform: uppercase;
+  font-size: 55px;
+  width: 100%;
+  max-width: 1500px;
+  color: white;
+  padding-left: 20px;
+}
+.wrapper {
+  width: 100%;
+  max-width: 1500px;
+}
+.e-doc {
+  background: linear-gradient(
+    90.08deg,
+    rgba(106, 104, 104, 0) 9.49%,
+    #272727 88.56%
+  );
+  color: white;
+  width: 100%;
+  max-width: 700px;
+  padding: 20px;
+  font-size: 30px;
+  align-self: flex-start;
+  clip-path: polygon(0 0, 100% 0, 75% 100%, 0% 100%);
+}
+.staff-details {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin: 10px 0px;
+  gap: 30px;
+  background: linear-gradient(180deg, #131313 25%, rgba(0, 0, 0, 0) 100%);
+  border: 2px solid black;
+  border-radius: 30px;
+  padding-inline: 40px;
+  padding-block: 20px;
+  height: 200px;
+  margin: 20px;
+  width: calc(100% - 20px);
+}
+.staff-details h3 {
+  font-size: 22px;
+  color: white;
+}
+.staff-details h3 span {
+  color: lightgrey;
+}
+.main-dashboard {
+  display: grid;
+  grid-template-columns: 300px 1fr 1fr;
+  grid-template-areas: "sidebar dash dash";
+  width: 100%;
+  max-width: 1500px;
+  gap: 30px;
+  height: 600px;
+}
+.sidebar {
+  height: 100%;
+  grid-area: sidebar;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  background-color: #262626;
+  flex-direction: column;
+  width: 100%;
+  padding: 60px 30px;
+  gap: 70px;
+}
+.side-link {
+  color: white;
+  font-size: 20px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  text-decoration: none;
+  gap: 20px;
+  font-weight: bold;
+}
+.side-link img {
+  width: 60px;
+  object-fit: contain;
+}
+.dashboard {
+  grid-area: dash;
+  height: 100%;
+  max-height: 100%;
+  overflow-y: auto;
+  display: flex;
+  justify-content: flex-start;
+  width: 100%;
+  align-items: center;
+  flex-direction: column;
+  gap: 20px;
+}
+.dashboard h1 {
+  font-size: 18px;
+  text-align: center;
+  padding: 40px 20px;
+  width: 100%;
+  font-size: 22px;
+  background-color: #262626;
+  border-radius: 21px;
+  color: white;
+}
+.summary {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  background-color: #262626;
+}
+.heading-row {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #252222;
+  padding: 35px 20px;
+}
+.heading-row h2 {
+  color: white;
+}
+.heading-row > div {
+  gap: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.heading-row select {
+  padding: 6px 20px;
+  font-size: 16px;
+}
+.row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 20px 20px;
+}
+.row h2 {
+  color: white;
+  font-size: 18px;
+}
+.row p {
+  font-size: 18px;
+  color: white;
+}
+.mobile {
+  display: none;
+}
+.overlay {
+  display: none;
+}
+@media screen and (max-width: 1241px) {
+  .galaxy-cont .galaxy {
+    font-size: 40px;
+  }
+  .e-doc {
+    font-size: 25px;
+  }
+  .top-bar img {
+    width: 50px;
+  }
+  .top-bar .img-wrapper {
+    width: 100px;
+  }
+  .heading-row h2 {
+    font-size: 20px;
+  }
+  .dashboard h1 {
+    font-size: 17px;
+  }
+}
+@media screen and (max-width: 887px) {
+  .mobile {
+    display: block;
+    color: white;
+    font-size: 25px;
+    cursor: pointer;
+  }
+  .overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: black;
+    opacity: 0.7;
+    z-index: 39;
+  }
+  .open-overlay {
+    display: block;
+  }
+  .main-dashboard {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    margin-top: 30px;
+    width: 100%;
+    flex-direction: column;
+    padding-inline: 20px;
+    height: auto;
+  }
+  .sidebar {
+    grid-area: initial;
+    position: fixed;
+    top: 0;
+    left: -900px;
+    max-width: 400px;
+    z-index: 40;
+    padding: 100px 20px;
+    transition: all 0.6s ease-in-out;
+  }
+  .open-side {
+    left: 0;
+  }
+  .side-link {
+    font-size: 17px;
+  }
+  .side-link img {
+    width: 50px;
+  }
+  .sidebar .mobile {
+    position: absolute;
+    top: 2%;
+    right: 4%;
+    grid-area: initial;
+  }
+  .staff-details {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+    height: auto;
+  }
+  .staff-details h3 {
+    font-size: 18px;
+  }
+  .heading-row h2 {
+    font-size: 16px;
+  }
+  .heading-row select {
+    padding: 0px;
+    font-size: 12px;
+  }
+  .dashboard h1 {
+    font-size: 14px;
+  }
+}
+@media screen and (max-width: 521px) {
+  .galaxy-cont .galaxy {
+    font-size: 30px;
+  }
+  .galaxy-cont {
+    height: auto;
+    padding: 20px;
+  }
+  .e-doc {
+    font-size: 18px;
+  }
+  .staff-details {
+    padding: 20px 10px;
+    width: 100%;
+    border-radius: 0px;
+    border: 1px solid black;
+  }
+  .staff-details h3 {
+    font-size: 15px;
+  }
+  .dashboard h1 {
+    border-radius: 0px;
+  }
+  .main-dashboard {
+    padding-inline: 0px;
+  }
+  .heading-row,
+  .row {
+    padding-inline: 10px;
+  }
+  .heading-row h2 {
+    font-size: 14px;
+  }
+  .row h2 {
+    font-size: 16px;
+  }
+  .main-dashboard > .mobile {
+    padding-left: 10px;
+  }
+  .top-bar {
+    padding: 0px;
+  }
+}
+@media screen and (max-width: 420px) {
+  .sidebar {
+    max-width: none;
+  }
+}
