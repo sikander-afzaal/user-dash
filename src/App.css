@@ -15,6 +15,7 @@
   max-width: 1500px;
   width: 100%;
   position: fixed;
+  background-color: white;
   top: 0;
   z-index: 30;
   left: 50%;
@@ -26,13 +27,12 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  padding-inline: 20px;
 }
 .top-bar .container {
   justify-content: space-between;
 }
 .img-wrapper {
-  background-color: #8e8c8c;
+  background-color: #e1e1e1;
   width: 100px;
   display: flex;
   justify-content: center;
@@ -44,7 +44,7 @@
   object-fit: contain;
 }
 .galaxy-cont {
-  background: linear-gradient(90deg, #8e8c8c 0%, #b5b3b3 78.12%);
+  background: #e1e1e1;
   width: 100%;
   height: 80px;
   display: flex;
@@ -64,7 +64,7 @@
   max-width: 1500px;
 }
 .e-doc {
-  background: linear-gradient(89.93deg, #9d9d9d 1.99%, #8b8989 84.44%);
+  background: #e1e1e1;
   color: black;
   width: 100%;
   max-width: 700px;
@@ -77,13 +77,13 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   margin: 10px 0px;
-  gap: 30px;
-  background: #8e8c8c;
+  gap: 10px;
+  background: white;
   border: 2px solid black;
   border-radius: 30px;
   padding-inline: 40px;
-  padding-block: 20px;
-  height: 200px;
+  padding-block: 10px;
+  height: 150px;
   width: 100%;
 }
 .staff-details h3 {
@@ -102,7 +102,7 @@
   max-width: 1500px;
   gap: 30px;
   height: 600px;
-  margin-top: 500px;
+  margin-top: 470px;
 }
 .sidebar {
   height: 100%;
@@ -110,7 +110,7 @@
   display: flex;
   justify-content: flex-start;
   align-items: flex-start;
-  background: linear-gradient(180deg, #8e8c8c 11.98%, #aa9f9f 89.06%);
+  background: white;
   flex-direction: column;
   width: 100%;
   padding: 30px 20px;
@@ -143,7 +143,7 @@
   font-weight: bold;
 }
 .active-drop {
-  background-color: #787676;
+  background-color: #e1e1e1;
 }
 .active-drop .main-drop {
   display: flex;
@@ -189,7 +189,7 @@
   padding: 40px 20px;
   width: 100%;
   font-size: 22px;
-  background-color: #8e8c8c;
+  background-color: #e1e1e1;
   border-radius: 21px;
   color: black;
   border: 1px solid black;
@@ -201,15 +201,16 @@
   flex-direction: column;
   height: 100%;
   width: 100%;
-  background-color: #8e8c8c;
+  background-color: white;
+  border: 1px solid black;
 }
 .heading-row {
   width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: #787676;
-  padding: 35px 20px;
+  background: #e1e1e1;
+  padding: 25px 20px;
   border-bottom: 1px solid black;
 }
 .heading-row h2 {
@@ -226,7 +227,7 @@
   font-size: 18px;
   cursor: pointer;
   font-weight: 600;
-  background-color: #8d8c8c;
+  background-color: white;
   border: 1px solid black;
 }
 .row {
@@ -315,7 +316,7 @@
     height: 100vh;
     overflow-y: auto;
     transition: all 0.6s ease-in-out;
-    background: rgb(211, 211, 211);
+    background: white;
   }
   .open-side {
     left: 0;
@@ -352,6 +353,9 @@
   .dashboard h1 {
     font-size: 14px;
     padding-inline: 5px;
+  }
+  .main-dashboard {
+    margin-top: 420px;
   }
 }
 @media screen and (max-width: 521px) {
