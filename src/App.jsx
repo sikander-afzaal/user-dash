@@ -1,10 +1,16 @@
 import "./App.css";
-import { faBars, faXmark } from "@fortawesome/free-solid-svg-icons";
+import {
+  faBars,
+  faChevronDown,
+  faChevronUp,
+  faXmark,
+} from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useState } from "react";
 
 function App() {
   const [openSide, setOpenSide] = useState(false);
+  const [dropDown, setDropDown] = useState([false, false, false]);
   return (
     <div className="App">
       <div className="top-bar">
@@ -48,18 +54,81 @@ function App() {
             icon={faXmark}
             className="mobile"
           />
-          <a href="#" className="side-link">
-            <img src="/ico.png" alt="" />
-            New Request
-          </a>
-          <a href="#" className="side-link">
-            <img src="/ico.png" alt="" />
-            View Request
-          </a>
-          <a href="#" className="side-link">
-            <img src="/ico.png" alt="" />
-            Setup
-          </a>
+          <div className={`dropdown ${dropDown[0] ? "active-drop" : ""}`}>
+            <p
+              className="side-link"
+              onClick={() =>
+                setDropDown((prev) => {
+                  if (prev[0]) {
+                    return [false, false, false];
+                  } else {
+                    return [true, false, false];
+                  }
+                })
+              }
+            >
+              <img src="/ico.png" alt="" />
+              New Request{" "}
+              <FontAwesomeIcon
+                icon={dropDown[0] ? faChevronUp : faChevronDown}
+              />
+            </p>
+            <div className="main-drop">
+              <p className="drop-item">Administrative Approvals</p>
+              <p className="drop-item">Administrative Approvals</p>
+              <p className="drop-item">Administrative Approvals</p>
+            </div>
+          </div>
+          <div className={`dropdown ${dropDown[1] ? "active-drop" : ""}`}>
+            <p
+              className="side-link"
+              onClick={() =>
+                setDropDown((prev) => {
+                  if (prev[1]) {
+                    return [false, false, false];
+                  } else {
+                    return [false, true, false];
+                  }
+                })
+              }
+            >
+              <img src="/ico.png" alt="" />
+              View Request{" "}
+              <FontAwesomeIcon
+                icon={dropDown[1] ? faChevronUp : faChevronDown}
+              />
+            </p>
+            <div className="main-drop">
+              <p className="drop-item">Administrative Approvals</p>
+              <p className="drop-item">Administrative Approvals</p>
+              <p className="drop-item">Administrative Approvals</p>
+            </div>
+          </div>
+          <div className={`dropdown ${dropDown[2] ? "active-drop" : ""}`}>
+            <p
+              className="side-link"
+              onClick={() =>
+                setDropDown((prev) => {
+                  if (prev[2]) {
+                    return [false, false, false];
+                  } else {
+                    return [false, false, true];
+                  }
+                })
+              }
+            >
+              <img src="/ico.png" alt="" />
+              Setup
+              <FontAwesomeIcon
+                icon={dropDown[2] ? faChevronUp : faChevronDown}
+              />
+            </p>
+            <div className="main-drop">
+              <p className="drop-item">Administrative Approvals</p>
+              <p className="drop-item">Administrative Approvals</p>
+              <p className="drop-item">Administrative Approvals</p>
+            </div>
+          </div>
         </div>
         <FontAwesomeIcon
           onClick={() => setOpenSide(true)}
