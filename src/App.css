@@ -11,6 +11,15 @@
   max-width: 1500px;
   align-items: center;
 }
+.fixed {
+  max-width: 1500px;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  z-index: 30;
+  left: 50%;
+  transform: translateX(-50%);
+}
 .top-bar {
   background: transparent;
   width: 100%;
@@ -69,18 +78,13 @@
   grid-template-columns: 1fr 1fr;
   margin: 10px 0px;
   gap: 30px;
-  background: linear-gradient(
-    180.33deg,
-    #8e8c8c 83.16%,
-    rgba(53, 39, 39, 0) 104.81%
-  );
+  background: #8e8c8c;
   border: 2px solid black;
   border-radius: 30px;
   padding-inline: 40px;
   padding-block: 20px;
   height: 200px;
-  margin: 20px;
-  width: calc(100% - 20px);
+  width: 100%;
 }
 .staff-details h3 {
   font-size: 22px;
@@ -98,6 +102,7 @@
   max-width: 1500px;
   gap: 30px;
   height: 600px;
+  margin-top: 500px;
 }
 .sidebar {
   height: 100%;
@@ -264,6 +269,9 @@
   .dashboard h1 {
     font-size: 17px;
   }
+  .staff-details {
+    border-radius: 0px;
+  }
 }
 @media screen and (max-width: 887px) {
   .mobile {
@@ -289,7 +297,6 @@
     display: flex;
     justify-content: center;
     align-items: flex-start;
-    margin-top: 30px;
     width: 100%;
     flex-direction: column;
     padding-inline: 20px;

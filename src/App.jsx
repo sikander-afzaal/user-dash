@@ -13,36 +13,39 @@ function App() {
   const [dropDown, setDropDown] = useState([false, false, false]);
   return (
     <div className="App">
-      <div className="top-bar">
-        <div className="container">
-          <div className="img-wrapper">
-            <img src="/test.png" alt="" />
-          </div>
-          <div className="img-wrapper">
-            <img src="/test.png" alt="" />
+      <div className="fixed">
+        <div className="top-bar">
+          <div className="container">
+            <div className="img-wrapper">
+              <img src="/test.png" alt="" />
+            </div>
+            <div className="img-wrapper">
+              <img src="/test.png" alt="" />
+            </div>
           </div>
         </div>
+        <div className="galaxy-cont">
+          <h2 className="galaxy">Galaxy</h2>
+        </div>
+        <div className="wrapper">
+          <h2 className="e-doc">E-Document System</h2>
+        </div>
+        <div className="container staff-details">
+          <h3>
+            Staff Name: <span> Abed Pars</span>
+          </h3>
+          <h3>
+            Staff Number: <span> 00001</span>
+          </h3>
+          <h3>
+            Job Title: <span> Manager</span>
+          </h3>
+          <h3>
+            Department: <span> Internal Service</span>
+          </h3>
+        </div>
       </div>
-      <div className="galaxy-cont">
-        <h2 className="galaxy">Galaxy</h2>
-      </div>
-      <div className="wrapper">
-        <h2 className="e-doc">E-Document System</h2>
-      </div>
-      <div className="container staff-details">
-        <h3>
-          Staff Name: <span> Abed Pars</span>
-        </h3>
-        <h3>
-          Staff Number: <span> 00001</span>
-        </h3>
-        <h3>
-          Job Title: <span> Manager</span>
-        </h3>
-        <h3>
-          Department: <span> Internal Service</span>
-        </h3>
-      </div>
+
       <div className="main-dashboard">
         <div
           onClick={() => setOpenSide(false)}
