@@ -272,6 +272,8 @@
   }
   .staff-details {
     border-radius: 0px;
+    border-left: none;
+    border-right: none;
   }
 }
 @media screen and (max-width: 887px) {
@@ -372,8 +374,6 @@
   .staff-details {
     padding: 20px 10px;
     width: 100%;
-    border-radius: 0px;
-    border: 1px solid black;
   }
   .staff-details h3 {
     font-size: 15px;
