@@ -30,19 +30,21 @@ function App() {
         <div className="wrapper">
           <h2 className="e-doc">E-Document System</h2>
         </div>
-        <div className="container staff-details">
-          <h3>
-            Staff Name: <span> Abed Pars</span>
-          </h3>
-          <h3>
-            Staff Number: <span> 00001</span>
-          </h3>
-          <h3>
-            Job Title: <span> Manager</span>
-          </h3>
-          <h3>
-            Department: <span> Internal Service</span>
-          </h3>
+        <div className="padd">
+          <div className="container staff-details">
+            <h3>
+              Staff Name: <span> Abed Pars</span>
+            </h3>
+            <h3>
+              Staff Number: <span> 00001</span>
+            </h3>
+            <h3>
+              Job Title: <span> Manager</span>
+            </h3>
+            <h3>
+              Department: <span> Internal Service</span>
+            </h3>
+          </div>
         </div>
       </div>
 

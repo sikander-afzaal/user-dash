@@ -168,6 +168,7 @@
   height: 100%;
   overflow-y: auto;
   display: flex;
+  padding-inline: 10px;
   justify-content: flex-start;
   width: 100%;
   align-items: center;
@@ -192,7 +193,7 @@
   background-color: #e1e1e1;
   border-radius: 21px;
   color: black;
-  border: 1px solid black;
+  border: 2px solid black;
 }
 .summary {
   display: flex;
@@ -251,9 +252,15 @@
 .overlay {
   display: none;
 }
+.padd {
+  width: 100%;
+}
 @media screen and (max-width: 1241px) {
   .galaxy-cont .galaxy {
     font-size: 40px;
+  }
+  .padd {
+    padding-inline: 10px;
   }
   .e-doc {
     font-size: 25px;
@@ -272,8 +279,6 @@
   }
   .staff-details {
     border-radius: 0px;
-    border-left: none;
-    border-right: none;
   }
 }
 @media screen and (max-width: 887px) {
