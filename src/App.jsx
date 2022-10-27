@@ -6,11 +6,29 @@ import {
   faXmark,
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 function App() {
   const [openSide, setOpenSide] = useState(false);
   const [dropDown, setDropDown] = useState([false, false, false]);
+  const [user, setUser] = useState({});
+  const getUserData = async () => {
+    try {
+      const response = await fetch(
+        " https://random-data-api.com/api/v2/users?size=1"
+      );
+      const data = await response.json();
+      setUser(data);
+    } catch {
+      () => {
+        console.log("err");
+      };
+    }
+  };
+  useEffect(() => {
+    getUserData();
+  }, []);
+
   return (
     <div className="App">
       <div className="fixed">
@@ -33,16 +51,20 @@ function App() {
         <div className="padd">
           <div className="container staff-details">
             <h3>
-              Staff Name: <span> Abed Pars</span>
+              Staff Name:{" "}
+              <span>
+                {" "}
+                {user?.first_name} {user?.last_name}
+              </span>
             </h3>
             <h3>
-              Staff Number: <span> 00001</span>
+              Staff Number: <span> {Math.floor(Math.random() * 1000)}</span>
             </h3>
             <h3>
-              Job Title: <span> Manager</span>
+              Job Title: <span> {user?.employment?.key_skill}</span>
             </h3>
             <h3>
-              Department: <span> Internal Service</span>
+              Department: <span> {user?.employment?.title}</span>
             </h3>
           </div>
         </div>
