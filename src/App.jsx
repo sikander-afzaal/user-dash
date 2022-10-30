@@ -108,7 +108,7 @@ function App() {
                 .map((elem, idx) => {
                   return (
                     <p key={idx + "p"} className="drop-item">
-                      Administrative Approvals
+                      {user[idx]?.employment?.title}
                     </p>
                   );
                 })}
@@ -139,7 +139,7 @@ function App() {
                 .map((elem, idx) => {
                   return (
                     <p key={idx + "p"} className="drop-item">
-                      Administrative Approvals
+                      {user[idx]?.employment?.title}
                     </p>
                   );
                 })}
@@ -170,7 +170,7 @@ function App() {
                 .map((elem, idx) => {
                   return (
                     <p key={idx + "p"} className="drop-item">
-                      Administrative Approvals
+                      {user[idx]?.employment?.title}
                     </p>
                   );
                 })}
