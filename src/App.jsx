@@ -12,7 +12,7 @@ function App() {
   const [openSide, setOpenSide] = useState(false);
   const [dropDown, setDropDown] = useState([false, false, false]);
   const [randomNum, setRandomNum] = useState(1);
-  const [user, setUser] = useState({});
+  const [user, setUser] = useState([]);
   const getUserData = async () => {
     try {
       const response = await fetch(
@@ -201,8 +201,8 @@ function App() {
             </div>
             {user?.map((elem, idx) => {
               return (
-                <div className="row">
-                  <h2>{elem.employment.title}</h2>
+                <div key={idx + "row"} className="row">
+                  <h2>{elem?.employment?.title}</h2>
                   <p>{Math.ceil(Math.random() * 100)}</p>
                 </div>
               );
