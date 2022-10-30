@@ -11,11 +11,12 @@ import { useEffect, useState } from "react";
 function App() {
   const [openSide, setOpenSide] = useState(false);
   const [dropDown, setDropDown] = useState([false, false, false]);
+  const [randomNum, setRandomNum] = useState(1);
   const [user, setUser] = useState({});
   const getUserData = async () => {
     try {
       const response = await fetch(
-        " https://random-data-api.com/api/v2/users?size=1"
+        "https://random-data-api.com/api/v2/users?size=6"
       );
       const data = await response.json();
       setUser(data);
@@ -27,6 +28,7 @@ function App() {
   };
   useEffect(() => {
     getUserData();
+    setRandomNum(Math.ceil(Math.random() * 5));
   }, []);
 
   return (
@@ -54,17 +56,17 @@ function App() {
               Staff Name:{" "}
               <span>
                 {" "}
-                {user?.first_name} {user?.last_name}
+                {user[0]?.first_name} {user[0]?.last_name}
               </span>
             </h3>
             <h3>
               Staff Number: <span> {Math.floor(Math.random() * 1000)}</span>
             </h3>
             <h3>
-              Job Title: <span> {user?.employment?.key_skill}</span>
+              Job Title: <span> {user[0]?.employment?.key_skill}</span>
             </h3>
             <h3>
-              Department: <span> {user?.employment?.title}</span>
+              Department: <span> {user[0]?.employment?.title}</span>
             </h3>
           </div>
         </div>
@@ -101,9 +103,15 @@ function App() {
               />
             </p>
             <div className="main-drop">
-              <p className="drop-item">Administrative Approvals</p>
-              <p className="drop-item">Administrative Approvals</p>
-              <p className="drop-item">Administrative Approvals</p>
+              {Array(randomNum)
+                .fill(false)
+                .map((elem, idx) => {
+                  return (
+                    <p key={idx + "p"} className="drop-item">
+                      Administrative Approvals
+                    </p>
+                  );
+                })}
             </div>
           </div>
           <div className={`dropdown ${dropDown[1] ? "active-drop" : ""}`}>
@@ -126,9 +134,15 @@ function App() {
               />
             </p>
             <div className="main-drop">
-              <p className="drop-item">Administrative Approvals</p>
-              <p className="drop-item">Administrative Approvals</p>
-              <p className="drop-item">Administrative Approvals</p>
+              {Array(randomNum)
+                .fill(false)
+                .map((elem, idx) => {
+                  return (
+                    <p key={idx + "p"} className="drop-item">
+                      Administrative Approvals
+                    </p>
+                  );
+                })}
             </div>
           </div>
           <div className={`dropdown ${dropDown[2] ? "active-drop" : ""}`}>
@@ -151,9 +165,15 @@ function App() {
               />
             </p>
             <div className="main-drop">
-              <p className="drop-item">Administrative Approvals</p>
-              <p className="drop-item">Administrative Approvals</p>
-              <p className="drop-item">Administrative Approvals</p>
+              {Array(randomNum)
+                .fill(false)
+                .map((elem, idx) => {
+                  return (
+                    <p key={idx + "p"} className="drop-item">
+                      Administrative Approvals
+                    </p>
+                  );
+                })}
             </div>
           </div>
         </div>
@@ -179,30 +199,14 @@ function App() {
                 </select>
               </div>
             </div>
-            <div className="row">
-              <h2>Administrative approvals</h2>
-              <p>1</p>
-            </div>
-            <div className="row">
-              <h2>Administrative approvals</h2>
-              <p>1</p>
-            </div>
-            <div className="row">
-              <h2>Administrative approvals</h2>
-              <p>1</p>
-            </div>
-            <div className="row">
-              <h2>Administrative approvals</h2>
-              <p>1</p>
-            </div>
-            <div className="row">
-              <h2>Administrative approvals</h2>
-              <p>1</p>
-            </div>
-            <div className="row">
-              <h2>Administrative approvals</h2>
-              <p>1</p>
-            </div>
+            {user?.map((elem, idx) => {
+              return (
+                <div className="row">
+                  <h2>{elem.employment.title}</h2>
+                  <p>{Math.ceil(Math.random() * 100)}</p>
+                </div>
+              );
+            })}
           </div>
         </div>
       </div>
