@@ -184,8 +184,7 @@ function App() {
         />
         <div className="dashboard">
           <h1>
-            Last Request: <span>Inquires (Abcd Pqrs)</span> on{" "}
-            <span>02-Oct-2022</span>
+            Last Request: <span>{user[0]?.employment?.title}</span>
           </h1>
           <div className="summary">
             <div className="heading-row">
