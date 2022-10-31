@@ -184,7 +184,10 @@ function App() {
         />
         <div className="dashboard">
           <h1>
-            Last Request: <span>{user[0]?.employment?.title}</span>
+            Last Request:{" "}
+            <span>
+              {user[0]?.employment?.title} {user[0]?.date_of_birth}
+            </span>
           </h1>
           <div className="summary">
             <div className="heading-row">
